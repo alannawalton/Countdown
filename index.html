@@ -1,0 +1,79 @@
+
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css">
+        <style>
+            p, .clock{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            body {
+                background-color: #6969bc;
+            }
+/*
+            p {
+                color: black;
+                font-family: cursive;
+            }
+            body .flip-clock-wrapper ul li a div div.inn, body .flip-clock-small-wrapper ul li a div div.inn { color: lightblue!important; background-color: black !important; } 
+            .Lively {
+                width: 100px;
+                height: 100px;
+                mask: url(#mymask);
+                -webkit-mask-box-image: url(lively-logo.PNG);
+            }
+*/
+            p, .clock{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            body {
+                background-color: #6969bc;
+            }
+            p {
+                color: white;
+                font-family: cursive;
+            }
+            img {
+                height: 100px;
+            }
+            .flip-clock-divider .flip-clock-label {
+                color: white !important; 
+            }
+        </style>
+	</head>
+	<body>
+     
+		<div class="clock">
+        </div>
+        <p>Until the Launch of <span class="Lively"><img src="lively-logo.PNG"/></span></p>
+        
+        
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
+	</body>
+    <script>
+        var clock;
+        $(document).ready(function() {
+            // Grab the current date
+            var currentDate = new Date();
+            // Set some date in the future. In this case, it's always Jan 1
+            var futureDate  = new Date(currentDate.getFullYear() + 1, 0, 1);
+            // Calculate the difference in seconds between the future and current date
+            var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+            // Instantiate a coutdown FlipClock
+            clock = $('.clock').FlipClock(diff, {
+                clockFace: 'DailyCounter',
+                countdown: true
+            });
+        });
+    </script>
+</html>
